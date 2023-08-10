@@ -4,7 +4,6 @@
 using namespace std;
 int calculateColor(int majorcolor, int minorcolor)
 {
-    // return i * 5 + j
     return majorcolor * 5 + minorcolor;
 }
 int printColorMap()
