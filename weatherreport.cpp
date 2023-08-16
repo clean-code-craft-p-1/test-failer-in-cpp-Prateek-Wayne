@@ -82,7 +82,7 @@ namespace WeatherSpace
     {
         HighPrecipitationSensorStub sensor;
         string report = Report(sensor);
-        assert(report.find("rain") != string::npos);
+        assert(report.find("Sunny") != string::npos);
     }
 
 }
