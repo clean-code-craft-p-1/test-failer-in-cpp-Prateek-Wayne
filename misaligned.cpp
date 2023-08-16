@@ -36,7 +36,7 @@ int main()
 {
     int result = printColorMap();
     assert(result == 25);
-    assert(calculateColor(1,1) == 7);
+    assert(calculateColor(1,1) == 6);
     cout << "All is well (maybe!)\n";
     return 0;
 }
