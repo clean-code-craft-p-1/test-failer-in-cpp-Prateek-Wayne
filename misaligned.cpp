@@ -4,7 +4,7 @@
 using namespace std;
 int calculateColor(int majorcolor, int minorcolor)
 {
-    return majorcolor * 5 + minorcolor;
+    return majorcolor * 5 + minorcolor +1 ;
 }
 int printColorMap()
 {
@@ -36,7 +36,7 @@ int main()
 {
     int result = printColorMap();
     assert(result == 25);
-    assert(calculateColor(1,1) == 6);
+    assert(calculateColor(1,1) == 7);
     cout << "All is well (maybe!)\n";
     return 0;
 }
