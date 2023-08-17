@@ -1,21 +1,42 @@
 #include <iostream>
 #include <assert.h>
-
-int printColorMap() {
-    const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-    const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+#include <iomanip>
+using namespace std;
+int calculateColor(int majorcolor, int minorcolor)
+{
+    return majorcolor * 5 + minorcolor +1 ;
+}
+int printColorMap()
+{
+    const char *majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+    const char *minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
     int i = 0, j = 0;
-    for(i = 0; i < 5; i++) {
-        for(j = 0; j < 5; j++) {
-            std::cout << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+    for (i = 0; i < 5; i++)
+    {
+        for (j = 0; j < 5; j++)
+        {
+            if (calculateColor(i, j) < 10)
+            {
+                cout << calculateColor(i, j) << " "
+                     << " | " << setw(7) << majorColor[i]
+                     << setw(5) << " | " << minorColor[i] << "\n";
+            }
+            else
+            {
+                cout << calculateColor(i, j)
+                     << " | " << setw(7) << majorColor[i]
+                     << setw(5) << " | " << minorColor[i] << "\n";
+            }
         }
     }
     return i * j;
 }
 
-int main() {
+int main()
+{
     int result = printColorMap();
     assert(result == 25);
-    std::cout << "All is well (maybe!)\n";
+    assert(calculateColor(1,1) == 7);
+    cout << "All is well (maybe!)\n";
     return 0;
 }
